@@ -1,0 +1,95 @@
+# =========================
+# Frontend (React Native)
+# =========================
+
+CPMTaskApp/task_management_app/node_modules/
+CPMTaskApp/task_management_app/android/app/build/
+CPMTaskApp/task_management_app/android/.gradle/
+CPMTaskApp/task_management_app/android/.cxx/
+CPMTaskApp/task_management_app/ios/build/
+CPMTaskApp/task_management_app/ios/Pods/
+
+# =========================
+# Backend (Node.js)
+# =========================
+
+CPMTaskApp/task-backend/node_modules/
+CPMTaskApp/task-backend/.env
+
+# =========================
+# General Node
+# =========================
+
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# =========================
+# macOS
+# =========================
+
+.DS_Store
+
+# =========================
+# VS Code
+# =========================
+
+.vscode/
+
+# =========================
+# Android
+# =========================
+
+.gradle/
+build/
+local.properties
+*.iml
+
+# =========================
+# Xcode / iOS
+# =========================
+
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# =========================
+# Coverage
+# =========================
+
+coverage/
+
+# =========================
+# Metro
+# =========================
+
+.metro-health-check*
+
+# =========================
+# Environment Files
+# =========================
+
+.env
+.env.*
+
+# Android Native Build Artifacts
+CPMTaskApp/task_management_app/android/app/.cxx/
+CPMTaskApp/task_management_app/android/app/build/
+CPMTaskApp/task_management_app/android/build/
+
+# CMake / NDK
+**/.cxx/
+**/CMakeCache.txt
+**/build.ninja
+**/compile_commands.json
+**/cmake_install.cmake
+**/CMakeFiles/
+
+# Android generated files
+**/*.bin
+**/prefab_config.json
+**/configure_fingerprint.bin
+**/metadata_generation_command.txt
+
+# Kotlin compiler temp files
+**/kotlin-compiler-*.salive
