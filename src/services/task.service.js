@@ -24,10 +24,14 @@ const createTask = async (body, currentUser) => {
     return Task.findById(createdTask._id).populate(taskPopulate);
 };
 
-const getRelatedTasks = async () => {
-    return Task.find()
+const getRelatedTasks = async (currentUser) => {
+    const currentUserId = getUserObjectId(currentUser);
+
+    return Task.find({
+        $or: [{ assignedTo: currentUserId }, { assignedBy: currentUserId }],
+    })
         .populate(taskPopulate)
-        .sort({ createdAt: -1 });
+        .sort({ updatedAt: -1, createdAt: -1 });
 };
 
 const updateTask = async (taskId, body, currentUser) => {
