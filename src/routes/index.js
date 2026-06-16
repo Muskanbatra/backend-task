@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const auth = require('./auth.route')
 const task = require('./task.route')
+const attendance = require('./attendance.routes')
 
 const { authMiddleware } = require("../middleware/Api-auth.middleware")
 
@@ -14,6 +15,10 @@ const defaultRoutes = [
         path: "/tasks",
         route: task
     },
+    {
+        path: "/attendance",
+        route: attendance
+    }
 ]
 
 const authRoutes = [
