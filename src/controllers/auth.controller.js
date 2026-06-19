@@ -91,23 +91,6 @@ const updateProfile = asyncHandler(async (req, res) => {
     });
 })
 
-const updateFcmToken = asyncHandler(async (req, res) => {
-    const { fcmToken = "" } = req.body;
-
-    if (String(req.user_detail?._id) !== String(req.params.id)) {
-        throw new ErrorResponse("You can only update your own FCM token", 403);
-    }
-
-    await Auth.findByIdAndUpdate(req.params.id, {
-        fcmToken: String(fcmToken).trim(),
-    });
-
-    return res.status(200).json({
-        success: true,
-        message: "FCM token updated",
-    });
-})
-
 /**
  * Retrieves a paginated list of all users.
  * @param {Object} req - Express request object containing pagination parameters in query string (`page` and `limit`).
@@ -213,6 +196,5 @@ module.exports = {
     getAllUsers,
     deleteAccount,
     newRegister,
-    verifyOtp,
-    updateFcmToken
+    verifyOtp
 };
