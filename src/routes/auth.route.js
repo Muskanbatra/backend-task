@@ -49,6 +49,11 @@ router
         AuthController.updateProfile)
 
 router
+    .route("/update-fcm-token/:id")
+    .put(authMiddleware(),
+        AuthController.updateFcmToken)
+
+router
     .route("/get_all_users")
     .get(authMiddleware(),
         AuthController.getAllUsers)

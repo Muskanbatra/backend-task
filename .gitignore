@@ -93,3 +93,4 @@ CPMTaskApp/task_management_app/android/build/
 
 # Kotlin compiler temp files
 **/kotlin-compiler-*.salive
+firebase-service-account.json
