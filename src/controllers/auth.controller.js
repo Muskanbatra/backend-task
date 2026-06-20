@@ -186,6 +186,22 @@ const resetPassword = asyncHandler(async (req, res) => {
     return res.status(200).json({ success: true, data });
 });
 
+const saveFcmToken = asyncHandler(async (req, res) => {
+  const userId = req.user_detail._id;
+  const { fcmToken } = req.body;
+
+  console.log("SAVE FCM TOKEN USER:", userId);
+  console.log("SAVE FCM TOKEN:", fcmToken);
+
+  await Auth.findByIdAndUpdate(userId, { fcmToken });
+
+  res.json({
+    success: true,
+    message: "FCM token saved",
+  });
+});
+
+
 module.exports = {
     createAccount,
     loginWithEmailAndPass,
@@ -196,5 +212,6 @@ module.exports = {
     getAllUsers,
     deleteAccount,
     newRegister,
-    verifyOtp
+    verifyOtp,
+    saveFcmToken
 };

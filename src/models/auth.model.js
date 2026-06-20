@@ -46,6 +46,10 @@ const authSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    fcmToken: {
+        type: String,
+        default: '',
+    },
     otp: {
         type: String,
         required: false

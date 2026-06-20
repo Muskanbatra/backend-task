@@ -59,4 +59,6 @@ router
     .delete(authMiddleware(),
         AuthController.deleteAccount)
 
+router.put('/save_fcm_token', authMiddleware(), AuthController.saveFcmToken);
+
 module.exports = router
