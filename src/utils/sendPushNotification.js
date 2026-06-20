@@ -8,6 +8,11 @@ async function sendPushNotification(token, title, body, data = {}) {
     return;
   }
 
+  if (!messaging) {
+    console.log("Firebase messaging is not configured");
+    return;
+  }
+
   try {
     console.log("Sending push to token:", token);
 
